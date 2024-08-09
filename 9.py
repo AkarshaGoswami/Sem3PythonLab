@@ -1,29 +1,35 @@
-# WAP to check whether a)is a perfect number b)is an Armstrong number
+# Print the pattern upto N Lines:
 
-def is_perfect(n):
-    if n < 1:
-        return False
-    sum_of_divisors = 0
-    for i in range(1, n):
-        if n % i == 0:
-            sum_of_divisors += i
-    return sum_of_divisors == n
+# .
+# /_\
+# .
+# / \
+# /___\
+# .
+# / \
+# / \
+# /_____\
 
-def is_armstrong(n):
-    num_str = str(n)
-    power = len(num_str)
-    sum_of_powers = sum(int(digit) ** power for digit in num_str)
-    return sum_of_powers == n
+# N=2 N=3 N=4
 
-number = int(input("Enter a number: "))
 
-if is_perfect(number):
-    print(f"{number} is a Perfect number.")
-else:
-    print(f"{number} is not a Perfect number.")
+def print_pattern(N):
 
-if is_armstrong(number):
-    print(f"{number} is an Armstrong number.")
-else:
-    print(f"{number} is not an Armstrong number.")
+    print(" " * (N - 1) + ".")
+    for i in range(1, N):
+        print(" " * (N - i - 1) + "/" + " " * (2 * i - 1) + "\\")
 
+    if N > 1:
+        print("/" + "_" * (2 * N - 2) + "\\")
+
+N = int(input("Enter the number of lines N: "))
+print_pattern(N)
+
+# Output
+
+# Enter the number of lines N: 4
+#    .
+#   / \
+#  /   \
+# /     \
+# /______\

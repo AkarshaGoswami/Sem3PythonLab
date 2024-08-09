@@ -1,12 +1,29 @@
-# WAP to display reverse of a number
+#  Declare a function named print_list. It takes a list as a parameter and it prints out each
+# element of the list.
 
-n=int(input("Enter number : "))
+def print_list(my_list):
 
-num=n
-r=0
+  for item in my_list:
+    print(item)
 
-while n>0:
-    temp=n%10
-    r=r*10+temp
-    n=n//10
-print(r)
+num = int(input("Enter no.of elements: "))
+my_list = []
+for i in range(num):
+  element = int(input(f"Enter element {i+1}: "))
+  my_list.append(element)
+
+print_list(my_list)
+
+# Output
+
+# Enter no.of elements: 5
+# Enter element 1: 1
+# Enter element 2: 2
+# Enter element 3: 3
+# Enter element 4: 4
+# Enter element 5: 5
+# 1
+# 2
+# 3
+# 4
+# 5

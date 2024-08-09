@@ -1,10 +1,15 @@
-# WAP to swap two numbers
+#  Write a function called calculate_slope which return the slope of a linear equation
 
-n1=input("Enter first No. ")
-n2=input("Second No. ")
+x1 = int(input("Enter x1 : "))
+y1 = int(input("Enter y1 : "))
+x2 = int(input("Enter x2 : "))
+y2 = int(input("Enter y2 : "))
 
-temp=n1
-n1=n2
-n2=temp
-
-print("Answer : " + n1 + " " + n2)
+def calculate_slope():
+    if x2-x1==0:
+        slope = (y2 - y1) / (x2 - x1)
+        print("The slope is:", slope)
+    else:
+        print("The line is vertical.")
+    
+calculate_slope()
